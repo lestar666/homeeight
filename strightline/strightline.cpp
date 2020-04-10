@@ -15,7 +15,7 @@ int main()
 
 	vector<Vec2f> lines;
 
-	HoughLines(mid, lines, 1, CV_PI / 180, 180);
+	HoughLines(mid, lines, 1, CV_PI / 180, 91);
 
 
 	std::vector<cv::Vec2f>::iterator it = lines.begin();
@@ -29,7 +29,7 @@ int main()
 		pt1.x = cv::saturate_cast <int>(x0 + 1000 * (-b));
 		pt1.y = cv::saturate_cast <int>(y0 + 1000 * (a));
 		pt2.x = cv::saturate_cast <int>(x0 - 1000 * (-b));
-		pt2.y = cv::saturate_cast <int>(x0 - 1000 * (a));
+		pt2.y = cv::saturate_cast <int>(y0 - 1000 * (a));
 		cv::line(dst, pt1, pt2, cv::Scalar(0, 0, 255), 1, CV_AA);
 	}
 	imshow("src", src);
